@@ -6,7 +6,7 @@ The library itself exposes two functions:
  - generate
  - is_valid
 
-## generate
+## SLK.generate
 The generate function takes 4 arguments:
  - First Name (Full)
  - Last Name (Full)
@@ -18,3 +18,13 @@ The generate function takes 4 arguments:
 | Female  | 2           |
 | Intersex or Indeterminate | 3 |
 | Not stated/inadequately described | 9 |
+
+## SLK.is_valid
+This function will validate a given string based off of three separate 'types'
+
+1. A 14 character SLK in the METeOR spec, with the date of birth validated as a true date.
+2. A 32 character Crockford encoded string, using a subset of characters to represent a 14 character SLK
+3. A 40 character hex encoded string
+
+The return value of the is_valid function is an object with key value pairings of passed and
+failed validations.
