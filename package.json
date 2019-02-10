@@ -2,7 +2,7 @@
   "name": "slk-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/slk.min.js",
   "scripts": {
     "test": "jest",
     "dev": "parcel src/index.js",
