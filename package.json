@@ -1,6 +1,6 @@
 {
   "name": "slk-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/slk.min.js",
   "scripts": {
