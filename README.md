@@ -16,6 +16,7 @@ The generate function takes 4 arguments:
  - Gender Identifier given as an integer from the following
 
 | Gender  | Identifier  |
+|---------|-------------|
 | Male    | 1           |
 | Female  | 2           |
 | Intersex or Indeterminate | 3 |
