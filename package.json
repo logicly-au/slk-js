@@ -2,11 +2,11 @@
   "name": "slk-generator",
   "version": "1.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "dev": "parcel index.js",
-    "build": "parcel build index.js"
+    "dev": "parcel index.js --global SLK",
+    "build": "parcel build index.js --global SLK"
   },
   "keywords": [],
   "author": "",

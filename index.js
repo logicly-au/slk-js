@@ -8,6 +8,8 @@ const HEX_REGEX = /^[0-9A-Fa-f]{40}$/;
 const CROCKFORD_REGEX = /^[0-9ABCDEFGHJKMNPQRSTVWXYZ]{32}$/;
 const DOB_REGEX = /^([0-2][0-9]|(3)[0-1])(((0)[0-9])|((1)[0-2]))\d{4}$/;
 
+const VALID_DOB_REGEX = /^\d{4}-(((0)[0-9])|((1)[0-2]))-([0-2][0-9]|(3)[0-1])$/;
+
 const nibbler = new Nibbler({
   dataBits: 8,
   codeBits: 5,
@@ -26,10 +28,15 @@ const stringToArray = (x, y = EMPTY_STRING) => x.split(y)
 const generate = (first = "", last = "", dobString, genderId) => {
     first = sliceString(first, FIRST_NAME_INDICES);
     last = sliceString(last, LAST_NAME_INDICES);
+
+    if(!VALID_DOB_REGEX.test(dobString)) {
+      throw new Error("Date of birth field for SLK generation must be a string in the format yyyy-mm-dd");
+    }
+
     let dobArray = dobString.split("-");
     dobArray.reverse();
     let dob = dobArray.join(EMPTY_STRING);
-    genderId = genderId == 0 && 9 || genderId;
+    genderId = genderId == "0" && "9" || genderId;
     let slk = [last, first, dob, genderId].join(EMPTY_STRING).toUpperCase();
     let hash = nibbler.encode(SHA1(slk).toString(Latin1));
     return {slk, hash};
@@ -69,7 +76,7 @@ const sliceString = ($string, $indices) => {
   let ret = stringToArray("2".repeat($indices.length));
 
   if(!!$string.length === false) {
-    return arrayToString(ret);
+    return "9".repeat($indices.length);
   }
   // normalize the name first
   $string = unorm.nfkd($string);

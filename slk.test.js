@@ -1,4 +1,4 @@
-const SLK = require("./dist/slk.min.js");
+const SLK = require("./dist/index.js");
 
 const fixtures = [
   {
@@ -75,6 +75,27 @@ let invalid = [
 test("slk is what it is expected to be", () => {
   var x = SLK.generate("David", "Bindloss", "1989-01-23", "1");
   expect(x.slk).toBe("INLAV230119891");
+});
+
+test("SLK handles missing.", () => {
+  var x = SLK.generate("", "Bindloss", "1989-01-23", "1");
+  expect(x.slk).toBe("INL99230119891");
+  var x = SLK.generate("David", "", "1989-01-23", "1");
+  expect(x.slk).toBe("999AV230119891");
+
+
+});
+
+test("SLK handles short names.", () => {
+  var x = SLK.generate("Jo", "Bindloss", "1989-01-23", "1");
+  expect(x.slk).toBe("INLO2230119891");
+});
+
+
+test("Invalid SLK date handled correctly.", () => {
+  expect(() => {
+    SLK.generate("Jo", "Bindloss", "23/01/1989", "1")
+  }).toThrowError("Date of birth field for SLK generation");
 });
 
 fixtures.map((x) => {
