@@ -79,7 +79,7 @@ const sliceString = ($string, $indices) => {
     return "9".repeat($indices.length);
   }
   // normalize the name first
-  $string = unorm.nfkd($string);
+  $string = unorm.nfkd($string).replace(/\W/g, EMPTY_STRING);;
   stringToArray($string).map((e, i) => {
     if($indices.includes(i)) {
       ret[ret.indexOf("2")] = e;
