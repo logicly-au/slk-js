@@ -98,6 +98,12 @@ test("Invalid SLK date handled correctly.", () => {
   }).toThrowError("Date of birth field for SLK generation");
 });
 
+test("invalid characters should still produce valid slk", () => {
+  var x = SLK.generate('Jo,hn', 'St\' e-vens', '1954-06-07', '1')
+  expect(x.slk).toBe("TEEOH070619541");
+
+})
+
 fixtures.map((x) => {
   test(`${x.slk} slk is valid`, () => {
     expect(SLK.is_valid(x.slk).slk).toBe(true);

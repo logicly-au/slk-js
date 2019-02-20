@@ -2,11 +2,11 @@
   "name": "slk-generator",
   "version": "1.0.5",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/slk-generator.js",
   "scripts": {
     "test": "jest",
-    "dev": "parcel index.js --global SLK",
-    "build": "parcel build index.js --global SLK"
+    "build": "webpack --mode=production --progress",
+    "build:dev": "webpack --mode=development --progress"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +17,13 @@
     "unorm": "^1.4.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "google-closure-compiler": "^20190121.0.0",
     "jest": "^24.1.0",
-    "parcel-bundler": "^1.11.0"
+    "parcel-bundler": "^1.11.0",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
   }
 }
