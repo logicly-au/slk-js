@@ -30,8 +30,5 @@
   },
   "jest": {
     "transform": {".*": "<rootDir>/node_modules/babel-jest"}
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
   }
 }
