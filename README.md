@@ -1,7 +1,7 @@
 # Statistical Linkage Key
 [Meteor Definition](https://meteor.aihw.gov.au/content/index.phtml/itemId/349510)
 
-[![Build Status](https://travis-ci.com/DavidBindloss/statistical-linkage-key.svg?branch=master)](https://travis-ci.com/DavidBindloss/statistical-linkage-key)
+[![Build Status](https://travis-ci.com/strategicdata/slk-js.svg?branch=master)](https://travis-ci.com/strategicdata/slk-js)
 
 This small library handles both the generation and validation of an SLK.
 The library itself exposes two functions:
