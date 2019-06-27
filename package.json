@@ -1,5 +1,5 @@
 {
-  "name": "slk",
+  "name": "slk-js",
   "version": "1.0.5",
   "description": "",
   "main": "dist/slk.js",
@@ -30,5 +30,8 @@
   },
   "jest": {
     "transform": {".*": "<rootDir>/node_modules/babel-jest"}
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
   }
 }
