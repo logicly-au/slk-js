@@ -1,7 +1,7 @@
 {
   "name": "slk-js",
-  "version": "1.0.5",
-  "description": "",
+  "version": "1.0.0",
+  "description": "A generator / validator for Statistical Linkage Keys",
   "main": "dist/slk.js",
   "babel": {
         "presets": ["@babel/preset-env"]
