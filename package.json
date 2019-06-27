@@ -1,15 +1,18 @@
 {
-  "name": "slk-generator",
+  "name": "slk",
   "version": "1.0.5",
   "description": "",
-  "main": "dist/slk-generator.js",
+  "main": "dist/slk.js",
+  "babel": {
+        "presets": ["@babel/preset-env"]
+  },
   "scripts": {
     "test": "jest",
     "build": "webpack --mode=production --progress",
     "build:dev": "webpack --mode=development --progress"
   },
   "keywords": [],
-  "author": "",
+  "author": "Strategic Data Pty Ltd",
   "license": "ISC",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
@@ -19,11 +22,13 @@
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.5",
-    "google-closure-compiler": "^20190121.0.0",
     "jest": "^24.1.0",
-    "parcel-bundler": "^1.11.0",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3"
+  },
+  "jest": {
+    "transform": {".*": "<rootDir>/node_modules/babel-jest"}
   }
 }

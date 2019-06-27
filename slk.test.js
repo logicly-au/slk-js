@@ -1,4 +1,4 @@
-const SLK = require("./dist/index.js");
+import SLK from './index.js';
 
 const fixtures = [
   {
