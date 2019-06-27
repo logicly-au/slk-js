@@ -1,10 +1,12 @@
 {
   "name": "slk-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A generator / validator for Statistical Linkage Keys",
   "main": "dist/slk.js",
   "babel": {
-        "presets": ["@babel/preset-env"]
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "scripts": {
     "test": "jest",
@@ -29,6 +31,8 @@
     "webpack-cli": "^3.2.3"
   },
   "jest": {
-    "transform": {".*": "<rootDir>/node_modules/babel-jest"}
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    }
   }
 }
